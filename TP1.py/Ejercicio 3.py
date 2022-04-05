@@ -1,3 +1,4 @@
+#Ejercicio 3
 print ('Multiplos de 3')
 
 for i in range (3,100,3):

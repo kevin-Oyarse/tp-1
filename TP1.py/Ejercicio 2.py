@@ -1,3 +1,4 @@
+#Ejercicio 2
 base=None
 altura=None
 while True:

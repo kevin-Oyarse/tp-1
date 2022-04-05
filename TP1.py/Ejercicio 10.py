@@ -1,3 +1,4 @@
+#Ejercicio 10
 import random
 vidas=0
 minmun=1

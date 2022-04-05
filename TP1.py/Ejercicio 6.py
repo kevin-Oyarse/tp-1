@@ -1,3 +1,4 @@
+#Ejercicio 6
 amigos=[]
 a=input("¿Queres cargar los nombres de tus amigos?\n")
 while a==a:

@@ -1,3 +1,4 @@
+#Ejercicio 8
 signos=["!","“","#","$","%","&",".","-"]
 vocales=["a","e","i","o","u"]
 cant=0

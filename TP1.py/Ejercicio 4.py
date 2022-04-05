@@ -1,3 +1,4 @@
+#Ejercicio 5
 n1=int(input("ingrese un número:\n"))
 n2=int(input("ingrese otro número:\n"))
 resultado=n1%n2

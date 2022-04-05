@@ -1,3 +1,4 @@
+#Ejercicio 4
 n1=float(input ('ingrese su numero: '))
 n2=float(input ('ingrese su numero: '))
 n3=float(input ('ingrese su numero: '))

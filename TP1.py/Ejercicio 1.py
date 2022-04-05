@@ -1,5 +1,3 @@
-#promdioPm es promedio primera materia
-#primeraM es primera materia
 a=3
 for a in range (1):                                                                         
     materia1=[input("\n Cargue la primera materia: \n")]
