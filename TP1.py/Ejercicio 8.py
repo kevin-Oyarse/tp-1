@@ -5,17 +5,15 @@ cant=0
 
 nombre=input('Ingresa su nombre y apellido:\n')
 nombre.lower()
-while nombre!=vocales:
-    if nombre !=vocales:
-        for i in vocales:
-            for j in nombre:
-                if i==j:
-                    cant+=1
-        break
-    else:
-        print("solo letras")
-        nombre=input("ingresar un nombre:\n")
-print("La cantidad de vocales es de ",cant)
+for i in vocales:
+    for j in nombre:
+        if i==j:
+            cant+=1
+if cant>3:
+    print ("El nombre que ingresaste tiene",cant,"vocales.")
+elif cant<3:
+    print ("El nombre tiene menos de 3 vocales.")
+
 
 año=input("ingresar año:\n")
 while len(año)==len(año):
@@ -30,17 +28,14 @@ while len(año)==len(año):
 
 numero=input("ingresar su contraseña:\n")
 contra=0
-while numero!=signos:
-    if numero !=signos:
-        for i in signos:
-            for j in numero:
-                if i==j:
-                    contra+=1
-        break
-    else:
-        print("solo letras")
-        nombre=input("ingresar un nombre:\n")
-print("tu contraseña tiene esta cantidad de caracteres",contra)
+for i in signos:
+    for j in numero:
+        if i==j:
+            contra+=1
+if contra<8 or contra>16:
+    print("tu contraseña debe tener entre 8 a 16 caracteres y tener algun caracter especial")
+elif contra>=8 and contra<=16:
+    print("tu contraseña tiene esta cantidad de caracteres",contra)
 
 
 
