@@ -12,3 +12,5 @@ elif edad>34 and dinero>500 and hambre>5:
     print('hola '+nombre+' '+apellido+' ¿hoy hay asado?')
 elif hambre>=7 or dinero<100 and edad<18:
     print ('Hola '+nombre+' '+apellido+' ¿Vas a comer con tus padres?.')
+else:
+    print("Quedate en tu casa mejor")
