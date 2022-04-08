@@ -40,13 +40,14 @@ while fContra==0:
         for j in numero:
             if i==j:
                 contra+=1
-    if contra<8 or contra>16:
+    if contra<3 and len(numero)<8 and len(numero)<16:
         print("tu contraseña debe tener entre 8 a 16 caracteres y tener algun caracter especial")
         numero=input("ingresar su contraseña:\n")
         fContra=0
-    elif contra>=8 and contra<=16:
-        print("tu contraseña tiene esta cantidad de caracteres",contra)
+    elif contra>=3 and len(numero)>=8 and len(numero)<=16:
+        print("tu contraseña es correcta")
         fContra=1
+
 
 
 
