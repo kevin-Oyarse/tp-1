@@ -1,7 +1,6 @@
 import random
 
 jugando=True
-
 while jugando:
     pj= input("opciones= piedra, papel o tijera \n")
     pc=random.choice(["piedra","tijera","papel"])
