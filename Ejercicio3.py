@@ -16,7 +16,7 @@ while jugando:
         if pc=="tijera":
             print ("empate de tijeras ")
         elif pc=="papel":
-            print ("la pc eligio piedra")
+            print ("Perdiste ante la buena piedra")
         else:
             print("Ganaste con un buen par de tijeras")
     elif pj=="papel":
