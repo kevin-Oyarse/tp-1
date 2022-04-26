@@ -1,9 +1,10 @@
 palabras=[]
-v=0
-print ("cargue 5 palabras ")
-while v<=4:
+m=int(input ("cuantos palabras va a ingresar?\n"))
+print("Ingrese las palabras:")
+i=0
+while i<m:
     palabras.append(input())
     palabras.sort()
-    v+=1
-
+    i+=1
 print (palabras)
+
