@@ -1,14 +1,14 @@
 num=[]
-val=""
 print ("Ingrese los numeros:")
 while True:
     try:
-        val=float((input()))
+        val=input()
+        if val == "salir":
+            break
+        val=float((val))
         num.append(val)
     except:
         print ("solo numeros")
-    if num == "salir":
-        break
     if len(num)>0:
         prom=sum(num)//len(num)
         mayor=max(num)
