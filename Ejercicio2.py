@@ -1,10 +1,14 @@
 palabras=[]
-m=int(input ("cuantos palabras va a ingresar?\n"))
 print("Ingrese las palabras:")
-i=0
-while i<m:
-    palabras.append(input())
-    palabras.sort()
-    i+=1
+while True:
+    try:
+        pal=str(input())
+        palabras.append(pal)
+        palabras.sort()
+    except:
+        print("solo letras")
+    if pal == "salir":
+        break
+
 print (palabras)
 
