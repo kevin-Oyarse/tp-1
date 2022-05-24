@@ -1,6 +1,5 @@
 #Ejercicio 7
 
-from errno import EADDRNOTAVAIL
 nombre=(input('Hola, podrias decirme tu nombre:\n'))
 apellido=(input('Hola,'+' '+nombre+' '+ 'podrias decirme tu apellido:\n'))
 edad=float(input('podrias decirme tu edad:\n'))
