@@ -7,16 +7,16 @@ from ui.Views import *
 from controller.UsuariosControllers import*
 
 def Admin():
-    print("1-Cargar Autos")
-    print("2-Modificar precios del auto")
-    print("3-Modificar km de autos")
+    print("1-Cargar vehiculos")
+    print("2-Modificar precios de los vehiculos")
+    print("3-Modificar km de los vehiculos")
     print("4-Crear usuarios")
     print("5-Agregar detalles sobre el vehiculo")
     print("6-Mostrar lista de vehiculos")
     print("7-Salir")
     op=input()
     op=op.lower()
-    if op=="1" or op=="cargar autos":
+    if op=="1" or op=="cargar vehiculos":
         datos=input("Que desea cargar Auto,Moto,Colectivo,Bicicleta,Acoplado,Camiones.\n")
         if datos=="auto":
             ingrese_auto()
@@ -48,6 +48,8 @@ def Admin():
             modificarprecio_colectivo()
         elif vehiculo=="camion":
             modificarprecio_camion()
+        elif datos=="bicicleta" or datos=="bici":
+            modificarprecio_bici()
         Admin()
     elif op=="3" or op=="moficar km":
         vehiculo=input("elija el tipo de vehiculo para agregar el detalle: ")
@@ -79,7 +81,7 @@ def Admin():
             modificardetalle_Acoplado()
         elif vehiculo=="camioneta":
             modificardetalles_camioneta()
-        elif vehiculo=="bici":
+        elif vehiculo=="bicicleta" or vehiculo=="bici":
             modificardetalle_bici()
         elif vehiculo=="colectivo":
             modificardetalle_cole()

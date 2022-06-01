@@ -55,7 +55,7 @@ def inicio():
 
     loginButon=ttk.Button(mainFrame,text="Salir",command=quit)
     loginButon.grid(column=2,row=0,ipadx=5,ipady=5,padx=10,pady=10)
-    crearUsuarios()
+    bienvenida()
     root.mainloop()
 
 def inicioSesion():
@@ -82,6 +82,5 @@ def registarUser():
 
 
 if __name__=="__main__":
-    bienvenida()
     inicio()
 

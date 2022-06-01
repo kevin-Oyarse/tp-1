@@ -28,8 +28,6 @@ def crear_coplado():
     acoplado=Auto("","","","","","")
     agregarAcoplado(acoplado)
 
-
-
 def crear_bicleta():
     bici=Bicleta("fire bird","rodado 29","14.000","Sin estrenar","Nueva")
     agregarbici(bici)
