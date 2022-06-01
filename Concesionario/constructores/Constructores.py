@@ -1,25 +1,24 @@
-from data.Auto import _acoplado,_autos,_bici,_camion,_camioneta,_colectivo,_moto
 from model.Auto import Bicleta, Auto
 from model.Usuario import Usuario
 from data.Usuarios import agregaUsuarios, printUsuarios
 from data.Auto import*
 
 def crearUsuarios():
-    usuario = Usuario("admin","admin@gmail.com","admin123",1)
+    usuario = Usuario("admin","admin123","admin@gmail.com",1)
     agregaUsuarios(usuario)
-    usuario = Usuario("empleado","empleado@gmail.com","empleado123",2)
+    usuario = Usuario("empleado","empleado123","admin@gmail.com",2)
     agregaUsuarios(usuario)
 
 def crearAuto():
-    auto=Auto("Ford","Fiesta","0","$190.000","Full","Nuevo")
+    auto=Auto("Ford","Fiesta","0","Full","190.000","Nuevo")
     agregaAutos(auto)
-    auto=Auto("Ford","Focus","25.000","120.000","Full","Usado")
+    auto=Auto("Ford","Focus","25.000","Full","120.000","Usado")
     agregaAutos(auto)
 
 def crear_moto():
-    moto=Auto("BMW","G 650 GS","1700","17.700","motor nuevo","usada")
+    moto=Auto("BMW","G 650 GS","1700","motor nuevo","17.700","usada")
     agregarMoto(moto)
-    moto=Auto("Ducati","DesertX","0","14.000","Sin estrenar","Nueva")
+    moto=Auto("Ducati","DesertX","0","Sin estrenar","14.000","Nueva")
     agregarMoto(moto)
 
 
@@ -29,9 +28,7 @@ def crear_coplado():
     acoplado=Auto("","","","","","")
     agregarAcoplado(acoplado)
 
-def buscarAuto(auto):
-    _autos=input("Elegir auto")
-    return _autos
+
 
 def crear_bicleta():
     bici=Bicleta("fire bird","rodado 29","14.000","Sin estrenar","Nueva")
