@@ -1,6 +1,7 @@
 from model.Usuario import*
 from constructores.Constructores import ingrese_acoplado,ingrese_bicicleta,ingrese_camion,ingrese_camioneta,ingrese_colectivo,ingrese_moto,ingrese_auto
 from data.Auto import*
+from constructores.modificardor import *
 '''
 Puede ver los automóviles a la venta.
 Puede ver los precios y kilómetros del mismo.
@@ -31,9 +32,36 @@ def Empleado():
         printcamioneta()
         Empleado()
     elif op=="2" or op=="modificar km de autos":
-        print ("proximante")
+        vehiculo=input("elija el tipo de vehiculo para agregar el detalle: ")
+        if vehiculo=="auto":
+            modificarkm_auto()
+        elif vehiculo=="moto":
+            modificarkm_moto()
+        elif vehiculo=="acoplado":
+            modificarkm_Acoplado()
+        elif vehiculo=="camioneta":
+            modificarkm_camioneta()
+        elif vehiculo=="colectivo":
+            modificarkm_cole()
+        elif vehiculo=="camion":
+            modificarkm_camion()
     elif op=="3" or op=="agregar detalles":
-        print("proximanete")
+        vehiculo=input("elija el tipo de vehiculo para agregar el detalle: ")
+        if vehiculo=="auto":
+            modificarDetalle_auto()
+        elif vehiculo=="moto":
+            modificarDetalle_moto()
+        elif vehiculo=="acoplado":
+            modificardetalle_Acoplado()
+        elif vehiculo=="camioneta":
+            modificardetalles_camioneta()
+        elif vehiculo=="bici":
+            modificardetalle_bici()
+        elif vehiculo=="colectivo":
+            modificardetalle_cole()
+        elif vehiculo=="camion":
+            modificardetalles_camion()
+        Empleado()
     elif op=="4" or op=="salir":
         print("Gracias por visitarnos")
         quit()

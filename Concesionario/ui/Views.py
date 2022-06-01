@@ -4,7 +4,6 @@ from constructores.Constructores import crearUsuarios, crearAuto,crear_bicleta,c
 
 def bienvenida():
     print('Bienvenidos a Concesionaria "El autito"')
-    crearUsuarios()
     crearAuto()
     crear_moto()
     crear_coplado()
