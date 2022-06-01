@@ -1,3 +1,4 @@
+from data.Auto import _acoplado,_autos,_bici,_camion,_camioneta,_colectivo,_moto
 from model.Auto import Bicleta, Auto
 from model.Usuario import Usuario
 from data.Usuarios import agregaUsuarios, printUsuarios
@@ -28,7 +29,9 @@ def crear_coplado():
     acoplado=Auto("","","","","","")
     agregarAcoplado(acoplado)
 
-
+def buscarAuto(auto):
+    _autos=input("Elegir auto")
+    return _autos
 
 def crear_bicleta():
     bici=Bicleta("fire bird","rodado 29","14.000","Sin estrenar","Nueva")
