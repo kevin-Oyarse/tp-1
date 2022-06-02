@@ -10,7 +10,7 @@ def Admin():
     print("1-Cargar vehiculos")
     print("2-Modificar precios de los vehiculos")
     print("3-Modificar km de los vehiculos")
-    print("4-Crear usuarios")
+    print("4-Crear usuarios o mostrarlos")
     print("5-Agregar detalles sobre el vehiculo")
     print("6-Mostrar lista de vehiculos")
     print("7-Salir")
@@ -36,6 +36,7 @@ def Admin():
             ingrese_colectivo()
         else:
             print("Algo salio mal.")
+        Admin()
     elif op=="2" or op=="modificar precios":
         vehiculo=input("elija el tipo de vehiculo para agregar el detalle: ")
         if vehiculo=="auto":
@@ -73,10 +74,15 @@ def Admin():
             print("Ese vehiculo no esta o no se pude modificar los km.")
         Admin()
     elif op=="4" or op=="crear usuarios":
+        op2=input("¿Quiere crear un usuario o ver los ya existentes?:\n")
+        if op2=="crear usuario":
             user1=Usuario(input("Ingrese un nombre: "),input("Ingrese un correo: "),input("Ingrese una contraseña: "),input("Ingrese el nivel del usuario: "))
             agregaUsuarios(user1)
+        elif op2=="mostrar usuario" or op2=="mostrar usuarios" or op2=="ver usuario" or op2=="ver usuarios":
             printUsuarios()
-            Admin()
+        else:
+            print("Algo salio mal.")
+        Admin()
     elif op=="5" or op=="agregar detalle":
         vehiculo=input("elija el tipo de vehiculo para agregar el detalle: ")
         if vehiculo=="auto":
@@ -111,6 +117,7 @@ def Admin():
         printAcoplado()
         print("Camionetas:")
         printcamioneta()
+        Admin()
     elif op=="7" or op=="salir":
         print("Gracias por visitarnos")
         quit()
