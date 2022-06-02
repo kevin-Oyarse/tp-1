@@ -10,10 +10,10 @@ def crearUsuarios():
     agregaUsuarios(usuario)
 
 def crearAuto():
-    auto=Auto("Ford","Fiesta","0","Full","190.000","Nuevo")
-    agregaAutos(auto)
-    auto=Auto("Ford","Focus","25.000","Full","120.000","Usado")
-    agregaAutos(auto)
+    auto1=Auto("Ford","Fiesta","0","Full","190.000","Nuevo")
+    agregaAutos(auto1)
+    auto2=Auto("Ford","Focus","25.000","Full","120.000","Usado")
+    agregaAutos(auto2)
 
 def crear_moto():
     moto=Auto("BMW","G 650 GS","1700","motor nuevo","17.700","usada")
@@ -23,8 +23,6 @@ def crear_moto():
 
 
 def crear_coplado():
-    acoplado=Auto("","","","","","")
-    agregarAcoplado(acoplado)
     acoplado=Auto("","","","","","")
     agregarAcoplado(acoplado)
 
@@ -46,9 +44,6 @@ def crear_camioneta():
 def crear_camion():
     camion=Auto("","","","","","")
     agregarCamion(camion)
-    camion=Auto("","","","","","")
-    agregarCamion(camion)
-
 def crear_colectivo():
     cole=Auto("Agrake","MT 12","156.000","abollado del lado derecho","220.000","usado")
     agregarcolectivo(cole)
