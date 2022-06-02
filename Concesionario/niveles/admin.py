@@ -34,6 +34,8 @@ def Admin():
             ingrese_camion()
         elif datos =="colectivo":
             ingrese_colectivo()
+        else:
+            print("Algo salio mal.")
     elif op=="2" or op=="modificar precios":
         vehiculo=input("elija el tipo de vehiculo para agregar el detalle: ")
         if vehiculo=="auto":
@@ -50,6 +52,8 @@ def Admin():
             modificarprecio_camion()
         elif datos=="bicicleta" or datos=="bici":
             modificarprecio_bici()
+        else:
+            print("Ese vehiculo no esta o no se pude modificar el precio.")
         Admin()
     elif op=="3" or op=="moficar km":
         vehiculo=input("elija el tipo de vehiculo para agregar el detalle: ")
@@ -65,6 +69,8 @@ def Admin():
             modificarkm_cole()
         elif vehiculo=="camion":
             modificarkm_camion()
+        else:
+            print("Ese vehiculo no esta o no se pude modificar los km.")
         Admin()
     elif op=="4" or op=="crear usuarios":
             user1=Usuario(input("Ingrese un nombre: "),input("Ingrese un correo: "),input("Ingrese una contraseña: "),input("Ingrese el nivel del usuario: "))
@@ -87,6 +93,8 @@ def Admin():
             modificardetalle_cole()
         elif vehiculo=="camion":
             modificardetalles_camion()
+        else:
+            print("Ese vehiculo no esta o no se pude agregar un detalle.")
         Admin()
     elif op=="6" or op=="mostrar lista":
         print("Autos:")

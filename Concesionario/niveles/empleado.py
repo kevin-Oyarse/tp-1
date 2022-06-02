@@ -44,7 +44,9 @@ def Empleado():
         elif vehiculo=="colectivo":
             modificarkm_cole()
         elif vehiculo=="camion":
-            modificarkm_camion()
+            modificarkm_camion
+        else:
+            print("Ese vehiculo no esta o no se pude modificar los km.")
     elif op=="3" or op=="agregar detalles":
         vehiculo=input("elija el tipo de vehiculo para agregar el detalle: ")
         if vehiculo=="auto":
@@ -61,6 +63,8 @@ def Empleado():
             modificardetalle_cole()
         elif vehiculo=="camion":
             modificardetalles_camion()
+        else:
+            print("Ese vehiculo no esta o no se pude modificar los km.")
         Empleado()
     elif op=="4" or op=="salir":
         print("Gracias por visitarnos")

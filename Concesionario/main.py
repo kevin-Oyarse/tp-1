@@ -64,8 +64,8 @@ def inicioSesion():
         usuarioconPass=validarContrasenia(contraUser.get())
         while user:
             if(usuarioconPass[1]):
-                user= menu(usuarioconPass[1])
                 messagebox.showinfo("Conectado","Se inicio sesion con exito")
+                user= menu(usuarioconPass[1])
             else:
                 messagebox.showerror("Error","Contraseña incorrecta")
             break
