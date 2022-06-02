@@ -11,28 +11,7 @@ def agregaAutos(auto):
 
 def printAutos():
     print(_autos)
-
-def obtenerAuto(num):
-    return _autos[num]
-
-def obtenerMoto(num):
-    return _moto[num]
-
-def obtenerCole(num):
-    return _colectivo[num]
-
-def obtenerAcoplado(num):
-    return _acoplado(num)
-
-def obtenerCamioneta(num):
-    return _camioneta(num)
-
-def obtenerBici(num):
-    return _bici(num)
-
-def obtenerCamion(num):
-    return _camion(num)
-
+    
 def agregarMoto(moto):
     _moto.append(moto)
 
@@ -69,3 +48,23 @@ def agregarcolectivo(cole):
 def printcolectivo():
     print(_colectivo)
 
+def obtenerAuto(num):
+    return _autos[num]
+
+def obtenerMoto(num):
+    return _moto[num]
+
+def obtenerCole(num):
+    return _colectivo[num]
+
+def obtenerAcoplado(num):
+    return _acoplado(num)
+
+def obtenerCamioneta(num):
+    return _camioneta(num)
+
+def obtenerBici(num):
+    return _bici(num)
+
+def obtenerCamion(num):
+    return _camion(num)
