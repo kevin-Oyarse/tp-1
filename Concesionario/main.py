@@ -1,20 +1,27 @@
-from tkinter import ttk as ttk
+from tkinter import ttk as ttk 
 from tkinter import *
 from tkinter import messagebox as messagebox
-from controller.UsuariosControllers import menuInvitado
 from model.Usuario import Usuario
 from data.Usuarios import _usuariosRegistrados
 from ui.Views import *
-from controller.UsuariosControllers import buscarUsuario, validarContrasenia, menu
-
+from controller.UsuariosControllers import buscarUsuario, validarContrasenia, menu,menuInvitado
+from Ventanas.MenuPrincipal import *
 
 root= Tk()
 nombreUser=StringVar()
 contraUser=StringVar()
+CorreoUser=StringVar()
+nivelUser=StringVar()
+#Auto y bici
+marcaVar=StringVar()
+modeloVar=StringVar()
+precioVar=StringVar()
+estadoVar=StringVar()
+kmVar=StringVar()
+detalleVar=StringVar()
 
 def inicio():
     #Ventana principal
-    #root= Tk()
     root.title("Login Usuario")
 
     #mainFrame
@@ -47,14 +54,12 @@ def inicio():
     loginButon=ttk.Button(mainFrame,text="Iniciar Sesion",command=inicioSesion)
     loginButon.grid(column=1,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    RegistarBoton=ttk.Button(mainFrame,text="Registar",command=registarUser)
+    RegistarBoton=ttk.Button(mainFrame,text="Registar",command=vetanaRegistro)
     RegistarBoton.grid(column=0,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    loginButon=ttk.Button(mainFrame,text="Invitado",command=menuInvitado)
-    loginButon.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
+    InvitadoButon=ttk.Button(mainFrame,text="Invitado",command=menuInvitado)
+    InvitadoButon.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    loginButon=ttk.Button(mainFrame,text="Salir",command=quit)
-    loginButon.grid(column=2,row=0,ipadx=5,ipady=5,padx=10,pady=10)
     bienvenida()
     root.mainloop()
 
@@ -71,16 +76,68 @@ def inicioSesion():
             break
     else:
         messagebox.showerror("Error","No existen usuarios con ese nombre")
-def registarUser():
+
+def registarUser():  
     name=nombreUser.get()
     passwd=contraUser.get()
-    newUser=Usuario(name,passwd,email=name+"@gmail.com",nvl="3")
+    email=CorreoUser.get()
+    nivel=nivelUser.get()
+
+    newUser=Usuario(name,passwd,email,nivel)
     _usuariosRegistrados.append(newUser)
+
     messagebox.showinfo("Registro exitoso",f"Se registro el usuaio {name} con exito")
+
     nombreUser.set("")
     contraUser.set("")
+
+def vetanaRegistro():
+    #Ventana Registro
+    winregistro=Toplevel()
+    winregistro.title ("Ventan Registro")
+    titulo=Label(winregistro,text="Registrar usuario",font=("Arial",24),background="lightblue")
+    titulo.grid(column=0,row=0,padx=10,pady=10,columnspan=2)
+    winregistro.config(width=400,height=320,background="lightblue")
+
+    #Label 
+    nombreLabel=Label(winregistro,text="Nombre: ")
+    nombreLabel.grid(column=0,row=1)
+
+    passLabel=Label (winregistro,text="Contraseña: ")
+    passLabel.grid(column=0,row=2)
+
+    CorreoLabel=Label (winregistro,text="Correo: ")
+    CorreoLabel.grid(column=0,row=3)
+
+    nivelLabel=Label(winregistro,text="nivel del usuario: ")
+    nivelLabel.grid(column=0,row=4)
+
+    #Entrada de info
+
+    
+    nombreEntry=Entry(winregistro,textvariable=nombreUser)
+    nombreEntry.grid(column=1,row=1)
+
+    
+    contraEntry=Entry (winregistro,textvariable=contraUser,show="*")
+    contraEntry.grid(column=1,row=2)
+
+    CorreoEntry=Entry (winregistro,textvariable=CorreoUser)
+    CorreoEntry.grid(column=1,row=3)
+
+    nivelEntry=Entry (winregistro,textvariable=nivelUser)
+    nivelEntry.grid(column=1,row=4)
+
+    #Boton
+
+    botonRegistrar=Button (winregistro,text="Registrar",command=lambda:[registarUser(),winregistro.destroy()])
+    botonRegistrar.grid(column=1,row=5,ipadx=5,ipady=5,padx=10,pady=10)
+
+
 
 
 if __name__=="__main__":
     inicio()
+
+
 
