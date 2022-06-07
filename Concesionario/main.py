@@ -5,21 +5,13 @@ from model.Usuario import Usuario
 from data.Usuarios import _usuariosRegistrados
 from ui.Views import *
 from controller.UsuariosControllers import buscarUsuario, validarContrasenia, menu,menuInvitado
-from Ventanas.MenuPrincipal import *
+from Ventanas.VentanaPrincipal import *
 
 root= Tk()
 nombreUser=StringVar()
 contraUser=StringVar()
 CorreoUser=StringVar()
 nivelUser=StringVar()
-#Auto y bici
-marcaVar=StringVar()
-modeloVar=StringVar()
-precioVar=StringVar()
-estadoVar=StringVar()
-kmVar=StringVar()
-detalleVar=StringVar()
-
 def inicio():
     #Ventana principal
     root.title("Login Usuario")

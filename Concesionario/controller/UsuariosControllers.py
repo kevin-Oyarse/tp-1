@@ -1,4 +1,4 @@
-from Ventanas.MenuPrincipal import MenuPrincial
+from Ventanas.VentanaPrincipal import MenuPrincial
 from data.Auto import printAutos
 from data.Usuarios import _usuariosRegistrados
 from model.Usuario import Usuario
