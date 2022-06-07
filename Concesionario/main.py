@@ -5,7 +5,7 @@ from model.Usuario import Usuario
 from data.Usuarios import _usuariosRegistrados
 from ui.Views import *
 from controller.UsuariosControllers import buscarUsuario, validarContrasenia, menu,menuInvitado
-from Ventanas.VentanaPrincipal import *
+from Ventanas.MenuPrincipal import *
 
 root= Tk()
 nombreUser=StringVar()

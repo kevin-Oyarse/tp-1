@@ -1,5 +1,7 @@
 from tkinter import ttk as ttk 
 from tkinter import *
+import tkinter
+from data.Auto import printAutos, printMoto, printbici
 from constructores.Constructores import ingrese_auto
 
 
@@ -29,7 +31,7 @@ def MenuPrincial():
     botonDetalles=ttk.Button(win,text="Agregar detalles a vehiculos")#command=)
     botonDetalles.grid(column=3,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonLista=ttk.Button(win,text="Mostrar lista de vehiculos")#command=)
+    botonLista=ttk.Button(win,text="Mostrar lista de vehiculos",command=VentanaListaDeVehiculos)
     botonLista.grid(column=3,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
     botonSalir=ttk.Button(win,text="Salir",command=quit)
@@ -521,17 +523,21 @@ def VentanaDetalles():
     botonVolver.grid(column=5,row=4,ipadx=5,ipady=5,padx=10,pady=10)
 
 def VentanaListaDeVehiculos():
-    ventanamod=Toplevel()
-    ventanamod.title("Lista Vehiculos")
-    ventanamod.config(width=480,height=320)
-    #Titulo
-    #Botones
-
-
+    ventanaList=Toplevel()
+    ventanaList.title("Lista Vehiculos")
+    ventanaList.config(width=480,height=320)
+    #Text
+    
 
 def VentanaUsuarios():
-    ventanamod=Toplevel()
-    ventanamod.title("Menu Usuario")
-    ventanamod.config(width=480,height=320)
+    ventanaUser=Toplevel()
+    ventanaUser.title("Menu Usuario")
+    ventanaUser.config(width=480,height=320)
     #Titulo
     #Botones
+    #Crear user
+    botonCrear=ttk.Button(ventanaUser,text="Menu User",command=lambda:[MenuPrincial(),ventanaUser.destroy()])
+    botonCrear.grid(column=2,row=1,ipadx=5,ipady=5,padx=10,pady=10)
+    #Mostar user
+    botonMostrar=ttk.Button(ventanaUser,text="Mostrar",command=lambda:[MenuPrincial(),ventanaUser.destroy()])
+    botonMostrar.grid(column=3,row=1,ipadx=5,ipady=5,padx=10,pady=10)
