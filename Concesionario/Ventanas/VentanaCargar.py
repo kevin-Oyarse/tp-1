@@ -1,7 +1,10 @@
-from tkinter import ttk as ttk 
+from tkinter import messagebox, ttk as ttk 
 from tkinter import *
 from model.Auto import *
 from data.Auto import *
+
+
+#Cargar Vehiculos
 
 #auto
 def Cargar_Auto():
@@ -62,7 +65,7 @@ def Cargar_Auto():
     kmEntry.grid(column=3,row=6,columnspan=2)
 
     #Botones
-    botonCargar=ttk.Button (winauto,text="Cargar Auto",command=ingresar_auto)
+    botonCargar=ttk.Button (winauto,text="Cargar Auto",command=lambda:[ingresar_auto(),MensajeCarga()])
     botonCargar.grid(column=1,row=14)
     botonVolver=ttk.Button(winauto,text="cerrar ventana",command=winauto.destroy)
     botonVolver.grid(column=3,row=14)
@@ -112,7 +115,7 @@ def Cargar_Moto():
     kmEntry.grid(column=3,row=6,columnspan=2)
 
     #Botones
-    botonCargar=ttk.Button (winauto,text="Cargar Moto",textvariable=ingrese_moto)
+    botonCargar=ttk.Button (winauto,text="Cargar Moto",command=ingrese_moto)
     botonCargar.grid(column=1,row=14)
     botonVolver=ttk.Button(winauto,text="cerrar ventana",command=winauto.destroy)
     botonVolver.grid(column=3,row=14)
@@ -162,7 +165,7 @@ def Cargar_camioneta():
     kmEntry.grid(column=3,row=6,columnspan=2)
 
     #Botones
-    botonCargar=ttk.Button (winauto,text="Cargar camioneta",textvariable=ingrese_camioneta)
+    botonCargar=ttk.Button (winauto,text="Cargar camioneta",command=ingrese_camioneta)
     botonCargar.grid(column=1,row=14)
     botonVolver=ttk.Button(winauto,text="cerrar ventana",command=winauto.destroy)
     botonVolver.grid(column=3,row=14)
@@ -212,7 +215,7 @@ def Cargar_Colectivo():
     kmEntry.grid(column=3,row=6,columnspan=2)
 
     #Botones
-    botonCargar=ttk.Button (winauto,text="Cargar Colectivo",textvariable=ingrese_colectivo)
+    botonCargar=ttk.Button (winauto,text="Cargar Colectivo",command=ingrese_colectivo)
     botonCargar.grid(column=1,row=14)
     botonVolver=ttk.Button(text="cerrar ventana",command=winauto.destroy)
     botonVolver.grid(column=3,row=14)
@@ -363,7 +366,8 @@ def Cargar_Bici():
 
 
 
-#Cargar Autos
+#Ingresar Autos
+
 def ingresar_auto():
     marca=marcaVar.get()
     modelo=modeloVar.get()
@@ -439,3 +443,6 @@ def ingrese_colectivo():
     detalle=detalleVar.get()
     colectivo_ingresado=Auto(marca, modelo,km,detalle,precio,estado)
     agregarcolectivo(colectivo_ingresado)
+
+def MensajeCarga():
+    messagebox.showinfo("Carga","El Vehiculo cargado")

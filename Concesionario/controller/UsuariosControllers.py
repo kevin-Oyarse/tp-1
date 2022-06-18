@@ -1,4 +1,5 @@
 from Ventanas.MenuPrincipal import MenuPrincial
+from Ventanas.VentanaEmple import MenuEmpleado
 from data.Auto import printAutos
 from data.Usuarios import _usuariosRegistrados
 from model.Usuario import Usuario
@@ -37,7 +38,8 @@ def menuAdmin():
     #Admin()
     
 def menuEmpleado():
-    Empleado()
+    MenuEmpleado()
+    #Empleado()
 
 
 def menuInvitado():
