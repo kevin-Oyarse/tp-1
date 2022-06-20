@@ -4,14 +4,23 @@ from model.Usuario import *
 from Ventanas.VentaModi import *
 from Ventanas.VentanaCargar import*
 from data.Auto import _autos
+from data.Usuarios import _usuariosRegistrados
 #Ventana del menu
-ListaEjemplo = ["Rojo","Ford","$2000","150"]
+
+
 def MenuPrincial():
     #Ventana
     win=Toplevel()
     win.title ("Menu Principal.")
     win.config(width=480,height=320)
-
+    global nombreUser
+    global contraUser
+    global CorreoUser
+    global nivelUser
+    nombreUser=StringVar()
+    contraUser=StringVar()
+    CorreoUser=StringVar()
+    nivelUser=StringVar()
     #titulo
     #botones
 
@@ -76,9 +85,7 @@ def VentanaListaDeVehiculos():
     ventanaList.title("Lista Vehiculos")
     ventanaList.config(width=480,height=320)
     #Text
-    for i in _autos:
-        print(i)
-    Label(ventanaList,textvariable=i)
+
     botonVoler=ttk.Button(ventanaList,text="Volver",command=lambda:[MenuPrincial(),ventanaList.destroy()])
     botonVoler.grid(column=3,row=9,ipadx=5,ipady=5,padx=10,pady=10)
 
@@ -184,7 +191,7 @@ def VentanaUsuarios():
     #Titulo
     #Botones
     #Crear user
-    botonCrear=ttk.Button(ventanaUser,text="Crear User")#,command=lambda:[MenuPrincial(),ventanaUser.destroy()])
+    botonCrear=ttk.Button(ventanaUser,text="Crear User",command=lambda:[RegistarUser(),ventanaUser.destroy()])
     botonCrear.grid(column=2,row=1,ipadx=5,ipady=5,padx=10,pady=10)
     #Mostar user
     botonMostrar=ttk.Button(ventanaUser,text="Mostrar")#,command=lambda:[MenuPrincial(),ventanaUser.destroy()])
@@ -193,3 +200,55 @@ def VentanaUsuarios():
     botonVoler=ttk.Button(ventanaUser,text="Volver",command=lambda:[MenuPrincial(),ventanaUser.destroy()])
     botonVoler.grid(column=3,row=9,ipadx=5,ipady=5,padx=10,pady=10)
 
+def RegistarUser():
+    winUser=Toplevel()
+    winUser.title("Crear Usuario")
+    winUser.config(width=480,height=320)
+
+    nombreLabel=Label(winUser,text="Nombre: ")
+    nombreLabel.grid(column=0,row=1)
+
+    passLabel=Label (winUser,text="Contraseña: ")
+    passLabel.grid(column=0,row=2)
+
+    CorreoLabel=Label (winUser,text="Correo: ")
+    CorreoLabel.grid(column=0,row=3)
+
+    nivelLabel=Label(winUser,text="nivel del usuario: ")
+    nivelLabel.grid(column=0,row=4)
+
+    #Entrada de info
+
+    
+    nombreEntry=Entry(winUser,textvariable=nombreUser)
+    nombreEntry.grid(column=1,row=1)
+
+    
+    contraEntry=Entry (winUser,textvariable=contraUser,show="*")
+    contraEntry.grid(column=1,row=2)
+
+    CorreoEntry=Entry (winUser,textvariable=CorreoUser)
+    CorreoEntry.grid(column=1,row=3)
+
+    nivelEntry=Entry (winUser,textvariable=nivelUser)
+    nivelEntry.grid(column=1,row=4)
+
+    botonRegistrar=Button (winUser,text="Registrar",command=User)
+    botonRegistrar.grid(column=1,row=5,ipadx=5,ipady=5,padx=10,pady=10)
+
+def User():
+
+    name=nombreUser.get()
+    passwd=contraUser.get()
+    email=CorreoUser.get()
+    nivel=nivelUser.get()
+
+    newUser=Usuario(name,passwd,email,nivel)
+    _usuariosRegistrados.append(newUser)
+
+    messagebox.showinfo("Registro exitoso",f"Se registro el usuaio {name} con exito")
+
+    nombreUser.set("")
+    contraUser.set("")
+    CorreoUser.set("")
+    nivelUser.set("")
