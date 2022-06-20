@@ -78,7 +78,7 @@ def registarUser():
     newUser=Usuario(name,passwd,email,nivel)
     _usuariosRegistrados.append(newUser)
 
-    messagebox.showinfo("Registro exitoso",f"Se registro el usuaio {name} con exito")
+    messagebox.showinfo("Registro exitoso",f"Se registro el usuaio {name} con exito {nivel}")
 
     nombreUser.set("")
     contraUser.set("")
@@ -124,8 +124,6 @@ def vetanaRegistro():
 
     botonRegistrar=Button (winregistro,text="Registrar",command=lambda:[registarUser(),winregistro.destroy()])
     botonRegistrar.grid(column=1,row=5,ipadx=5,ipady=5,padx=10,pady=10)
-
-
 
 
 if __name__=="__main__":

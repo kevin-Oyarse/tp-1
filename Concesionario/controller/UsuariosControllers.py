@@ -25,9 +25,9 @@ def validarContrasenia(contra):
 
 
 def menu(args):
-    if(args == 1):
+    if(args == "1"):
         return menuAdmin()
-    elif args == 2:
+    elif args == "2":
         return menuEmpleado()
     else:
         return menuInvitado()
