@@ -1,3 +1,4 @@
+from Ventanas.MenuPrincipal import VentanaListaDeVehiculos
 from Ventanas.MenuPrincipal import MenuPrincial
 from Ventanas.VentanaEmple import MenuEmpleado
 from data.Auto import printAutos
@@ -43,4 +44,4 @@ def menuEmpleado():
 
 
 def menuInvitado():
-    Invitado()
+    VentanaListaDeVehiculos()
