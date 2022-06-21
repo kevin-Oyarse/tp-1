@@ -86,10 +86,11 @@ def VentanaListaDeVehiculos():
     ventanaList.title("Lista Vehiculos")
     ventanaList.config(width=480,height=320)
     #Text
-    etiqueta=tkinter.Label(ventanaList)
-    etiqueta.pack()
-    for autos in _autos:
-        etiqueta["text"]=autos
+    for i in _autos:
+        print(i)
+    listAuto=Label(ventanaList,text=i)
+    listAuto.grid(column=1,row=1)
+
 def VentanaPrecio():
     #Ventana
     ventanamod=Toplevel()

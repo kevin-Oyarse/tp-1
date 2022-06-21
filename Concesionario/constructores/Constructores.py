@@ -10,15 +10,15 @@ def crearUsuarios():
     agregaUsuarios(usuario)
 
 def crearAuto():
-    auto1=Auto("Ford","Fiesta","0","Full",190.000,"Nuevo")
+    auto1=Auto("Ford","Fiesta","0","Full","190.000","Nuevo")
     agregaAutos(auto1)
-    auto2=Auto("Ford","Focus","25.000","Full",120.000,"Usado")
+    auto2=Auto("Ford","Focus","25.000","Full","120.000","Usado")
     agregaAutos(auto2)
 
 def crear_moto():
-    moto=Auto("BMW","G 650 GS",1700,"motor nuevo",17.700,"usada")
+    moto=Auto("BMW","G 650 GS","1700","motor nuevo","17.700","usada")
     agregarMoto(moto)
-    moto=Auto("Ducati","DesertX",0,"Sin estrenar",14.000,"Nueva")
+    moto=Auto("Ducati","DesertX","0","Sin estrenar","14.000","Nueva")
     agregarMoto(moto)
 
 
@@ -27,17 +27,17 @@ def crear_coplado():
     agregarAcoplado(acoplado)
 
 def crear_bicleta():
-    bici=Bicleta("fire bird","rodado 29",14.000,"Sin estrenar","Nueva")
+    bici=Bicleta("fire bird","rodado 29","14.000","Sin estrenar","Nueva")
     agregarbici(bici)
-    bici=Bicleta("Klatter","Mountain Bike",17.000,"tiene la rueda de atras con pinchada ","usada")
+    bici=Bicleta("Klatter","Mountain Bike","17.000","tiene la rueda de atras con pinchada ","usada")
     agregarbici(bici)
 
 
 
 def crear_camioneta():
-    camioneta=Auto("Volkswagen","Amarok",0 ,"Full",250.000,"Nueva")
+    camioneta=Auto("Volkswagen","Amarok","0","Full","250.000","Nueva")
     agregarCamioneta(camioneta)
-    camioneta=Auto("Ford","Ranger",0 ,"Full",250.000,"Nueva")
+    camioneta=Auto("Ford","Ranger","0","Full","250.000","Nueva")
     agregarCamioneta(camioneta)
 
 
@@ -45,9 +45,9 @@ def crear_camion():
     camion=Auto("","","","","","")
     agregarCamion(camion)
 def crear_colectivo():
-    cole=Auto("Agrake","MT 12",156.000,"abollado del lado derecho",220.000,"usado")
+    cole=Auto("Agrake","MT 12","156.000","abollado del lado derecho","220.000","usado")
     agregarcolectivo(cole)
-    cole=Auto("Mercedez Benz",500,"0","Full",280.000,"nuevo")
+    cole=Auto("Mercedez Benz","500","0","Full","280.000","nuevo")
 
 def ingrese_auto():
     marca=input("Ingrese marca: ")
