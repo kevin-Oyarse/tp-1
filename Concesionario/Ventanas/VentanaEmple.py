@@ -28,7 +28,7 @@ def MenuEmpleado():
     botonDetalles=ttk.Button(win,text="Agregar detalles a vehiculos",command=lambda:[VentanaDetalles(),win.destroy()])
     botonDetalles.grid(column=3,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonLista=ttk.Button(win,text="Mostrar lista de vehiculos",command=lambda:[VentanaListaDeVehiculos(),win.destroy()])
+    botonLista=ttk.Button(win,text="Mostrar lista de vehiculos",command=VentanaListaDeVehiculos)
     botonLista.grid(column=3,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
     botonSalir=ttk.Button(win,text="Salir",command=quit)
@@ -40,12 +40,7 @@ def VentanaListaDeVehiculos():
     ventanaList.title("Lista Vehiculos")
     ventanaList.config(width=480,height=320)
     #Text
-    
-    
-  
-        
-    botonVoler=ttk.Button(ventanaList,text="Volver",command=lambda:[MenuEmpleado(),ventanaList.destroy()])
-    botonVoler.grid(column=3,row=9,ipadx=5,ipady=5,padx=10,pady=10)
+
 
 
 def VentanaKm():
