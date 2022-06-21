@@ -68,31 +68,30 @@ def VentanaDetalles():
     ventanamod.title("Modificar detalles")
     ventanamod.config(width=480,height=320)
     #Titulo
-
+    
     #Botones
-    botonAuto=ttk.Button(ventanamod,text="Auto")
+    botonAuto=ttk.Button(ventanamod,text="Auto",command=DetallesAuto)
     botonAuto.grid (column=2,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonMoto=ttk.Button(ventanamod,text=("Moto"))
+    botonMoto=ttk.Button(ventanamod,text="Moto",command=DetallesMoto)
     botonMoto.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonAcoplado=ttk.Button(ventanamod,text="Acoplado")
+    botonAcoplado=ttk.Button(ventanamod,text="Acoplado",command=DetallesAcoplado)
     botonAcoplado.grid(column=2,row=4,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonColectivo=ttk.Button(ventanamod,text="Colectivo")
+    botonColectivo=ttk.Button(ventanamod,text="Colectivo",command=DetallesCole)
     botonColectivo.grid(column=3,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonBici=ttk.Button(ventanamod,text="Bicicleta")
+    botonBici=ttk.Button(ventanamod,text="Bicicleta",command=DetallesBici)
     botonBici.grid(column=3,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonCamioneta=ttk.Button(ventanamod,text="Camioneta")
+    botonCamioneta=ttk.Button(ventanamod,text="Camioneta",command=DetallesCamioneta)
     botonCamioneta.grid(column=3,row=4,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonCamio=ttk.Button(ventanamod,text="Camion")
+    botonCamio=ttk.Button(ventanamod,text="Camion",command=DetallesCamion)
     botonCamio.grid(column=4,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 
 
     botonVolver=ttk.Button(ventanamod,text="Volver",command=lambda:[MenuEmpleado(),ventanamod.destroy()])
-    botonVolver.grid(column=5,row=4,ipadx=5,ipady=5,padx=10,pady=10)   
-
+    botonVolver.grid(column=5,row=4,ipadx=5,ipady=5,padx=10,pady=10)
 
