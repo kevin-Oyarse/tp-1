@@ -1,8 +1,11 @@
+from struct import pack
 from tkinter import ttk as ttk 
 from tkinter import *
+import tkinter
 from model.Usuario import *
 from Ventanas.VentaModi import *
 from Ventanas.VentanaCargar import*
+from model.Auto import*
 from data.Auto import _autos
 from data.Usuarios import _usuariosRegistrados
 #Ventana del menu
@@ -50,7 +53,7 @@ def cargarVehiculos():
     winV=Toplevel()
     winV.title("Cargar Vehiculos")
     winV.config(width=480,height=320)
-
+    
     #Titulo
     titulo=Label(winV,text="Cargar Vehiculo",font=("Arial",24))
     titulo.grid(column=2,row=0,padx=10,pady=10,columnspan=2)
@@ -85,10 +88,10 @@ def VentanaListaDeVehiculos():
     ventanaList.title("Lista Vehiculos")
     ventanaList.config(width=480,height=320)
     #Text
-
-    botonVoler=ttk.Button(ventanaList,text="Volver",command=lambda:[MenuPrincial(),ventanaList.destroy()])
-    botonVoler.grid(column=3,row=9,ipadx=5,ipady=5,padx=10,pady=10)
-
+    etiqueta=tkinter.Label(ventanaList)
+    etiqueta.pack()
+    for autos in _autos:
+        etiqueta["text"]=autos
 def VentanaPrecio():
     #Ventana
     ventanamod=Toplevel()
@@ -157,9 +160,9 @@ def VentanaDetalles():
     ventanamod.title("Modificar detalles")
     ventanamod.config(width=480,height=320)
     #Titulo
-
+    
     #Botones
-    botonAuto=ttk.Button(ventanamod,text="Auto")
+    botonAuto=ttk.Button(ventanamod,text="Auto",command=DetallesAuto)
     botonAuto.grid (column=2,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 
     botonMoto=ttk.Button(ventanamod,text=("Moto"))
@@ -237,7 +240,6 @@ def RegistarUser():
     botonRegistrar.grid(column=1,row=5,ipadx=5,ipady=5,padx=10,pady=10)
 
 def User():
-
     name=nombreUser.get()
     passwd=contraUser.get()
     email=CorreoUser.get()

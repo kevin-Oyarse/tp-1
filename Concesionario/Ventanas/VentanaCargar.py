@@ -71,12 +71,26 @@ def Cargar_Auto():
     botonVolver.grid(column=3,row=14)
 #moto
 def Cargar_Moto():
+    
     #Ventana
 
     winauto=Toplevel()
     winauto.title("Cargar Moto")
     winauto.config(width=400,height=320)
-
+    global marcaVar
+    global modeloVar
+    global precioVar
+    global estadoVar
+    global kmVar
+    global detalleVar
+    global numVar
+    marcaVar=StringVar()
+    modeloVar=StringVar()
+    precioVar=StringVar()
+    estadoVar=StringVar()
+    kmVar=StringVar()
+    detalleVar=StringVar()
+    numVar=StringVar()
     #Label
     marcaLabel=Label(winauto,text="Marca")
     marcaLabel.grid(column=1,row=1,columnspan=2)
@@ -126,6 +140,20 @@ def Cargar_camioneta():
     winauto=Toplevel()
     winauto.title("Cargar Camioneta")
     winauto.config(width=400,height=320)
+    global marcaVar
+    global modeloVar
+    global precioVar
+    global estadoVar
+    global kmVar
+    global detalleVar
+    global numVar
+    marcaVar=StringVar()
+    modeloVar=StringVar()
+    precioVar=StringVar()
+    estadoVar=StringVar()
+    kmVar=StringVar()
+    detalleVar=StringVar()
+    numVar=StringVar()
 
     #Label
     marcaLabel=Label(winauto,text="Marca")
@@ -176,6 +204,20 @@ def Cargar_Colectivo():
     winauto=Toplevel()
     winauto.title("Cargar Colectivo")
     winauto.config(width=400,height=320)
+    global marcaVar
+    global modeloVar
+    global precioVar
+    global estadoVar
+    global kmVar
+    global detalleVar
+    global numVar
+    marcaVar=StringVar()
+    modeloVar=StringVar()
+    precioVar=StringVar()
+    estadoVar=StringVar()
+    kmVar=StringVar()
+    detalleVar=StringVar()
+    numVar=StringVar()
 
     #Label
     marcaLabel=Label(winauto,text="Marca")
@@ -226,6 +268,20 @@ def Cargar_Camion():
     winauto=Toplevel()
     winauto.title("Cargar Camion")
     winauto.config(width=400,height=320)
+    global marcaVar
+    global modeloVar
+    global precioVar
+    global estadoVar
+    global kmVar
+    global detalleVar
+    global numVar
+    marcaVar=StringVar()
+    modeloVar=StringVar()
+    precioVar=StringVar()
+    estadoVar=StringVar()
+    kmVar=StringVar()
+    detalleVar=StringVar()
+    numVar=StringVar()
 
     #Label
     marcaLabel=Label(winauto,text="Marca")
@@ -276,6 +332,20 @@ def Cargar_Acoplado():
     winauto=Toplevel()
     winauto.title("Cargar Acoplado")
     winauto.config(width=400,height=320)
+    global marcaVar
+    global modeloVar
+    global precioVar
+    global estadoVar
+    global kmVar
+    global detalleVar
+    global numVar
+    marcaVar=StringVar()
+    modeloVar=StringVar()
+    precioVar=StringVar()
+    estadoVar=StringVar()
+    kmVar=StringVar()
+    detalleVar=StringVar()
+    numVar=StringVar()
 
     #Label
     marcaLabel=Label(winauto,text="Marca")
@@ -326,6 +396,20 @@ def Cargar_Bici():
     winauto=Toplevel()
     winauto.title("Cargar Bicicleta")
     winauto.config(width=400,height=320)
+    global marcaVar
+    global modeloVar
+    global precioVar
+    global estadoVar
+    global kmVar
+    global detalleVar
+    global numVar
+    marcaVar=StringVar()
+    modeloVar=StringVar()
+    precioVar=StringVar()
+    estadoVar=StringVar()
+    kmVar=StringVar()
+    detalleVar=StringVar()
+    numVar=StringVar()
 
     #Label
     marcaLabel=Label(winauto,text="Marca")
@@ -372,8 +456,8 @@ def ingresar_auto():
     marca=marcaVar.get()
     modelo=modeloVar.get()
     estado=estadoVar.get()
-    km=kmVar.get()
-    precio=precioVar.get()
+    km=int(kmVar.get())
+    precio=int(precioVar.get())
     estado=estadoVar.get()
     detalle=detalleVar.get()
     auto_ingresado=Auto(marca,modelo,km,detalle,precio,estado)
@@ -383,8 +467,8 @@ def ingrese_moto():
     marca=marcaVar.get()
     modelo=modeloVar.get()
     estado=estadoVar.get()
-    km=kmVar.get()
-    precio=precioVar.get()
+    km=int(kmVar.get())
+    precio=int(precioVar.get())
     estado=estadoVar.get()
     detalle=detalleVar.get()
     moto_ingresado=Auto(marca, modelo,km,detalle,precio,estado)
@@ -394,8 +478,8 @@ def ingrese_acoplado():
     marca=marcaVar.get()
     modelo=modeloVar.get()
     estado=estadoVar.get()
-    km=kmVar.get()
-    precio=precioVar.get()
+    km=int(kmVar.get())
+    precio=int(precioVar.get())
     estado=estadoVar.get()
     detalle=detalleVar.get()
     acoplado_ingresado=Auto(marca, modelo,km,detalle,precio,estado)
@@ -405,7 +489,7 @@ def ingrese_bicicleta():
     marca=marcaVar.get()
     modelo=modeloVar.get()
     estado=estadoVar.get()
-    precio=precioVar.get()
+    precio=int(precioVar.get())
     estado=estadoVar.get()
     detalle=detalleVar.get()
     bicicleta_ingresado=Bicleta(marca, modelo,detalle,precio,estado)
@@ -415,7 +499,7 @@ def ingrese_camioneta():
     marca=marcaVar.get()
     modelo=modeloVar.get()
     estado=estadoVar.get()
-    km=kmVar.get()
+    km=int(kmVar.get())
     precio=precioVar.get()
     estado=estadoVar.get()
     detalle=detalleVar.get()
@@ -426,8 +510,8 @@ def ingrese_camion():
     marca=marcaVar.get()
     modelo=modeloVar.get()
     estado=estadoVar.get()
-    km=kmVar.get()
-    precio=precioVar.get()
+    km=int(kmVar.get())
+    precio=int(precioVar.get())
     estado=estadoVar.get()
     detalle=detalleVar.get()
     camion_ingresado=Auto(marca, modelo,km,detalle,precio,estado)
@@ -437,8 +521,8 @@ def ingrese_colectivo():
     marca=marcaVar.get()
     modelo=modeloVar.get()
     estado=estadoVar.get()
-    km=kmVar.get()
-    precio=precioVar.get()
+    km=int(kmVar.get())
+    precio=int(precioVar.get())
     estado=estadoVar.get()
     detalle=detalleVar.get()
     colectivo_ingresado=Auto(marca, modelo,km,detalle,precio,estado)

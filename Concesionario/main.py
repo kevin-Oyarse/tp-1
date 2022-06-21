@@ -78,10 +78,12 @@ def registarUser():
     newUser=Usuario(name,passwd,email,nivel)
     _usuariosRegistrados.append(newUser)
 
-    messagebox.showinfo("Registro exitoso",f"Se registro el usuaio {name} con exito {nivel}")
+    messagebox.showinfo("Registro exitoso",f"Se registro el usuaio {name} con exito")
 
     nombreUser.set("")
     contraUser.set("")
+    CorreoUser.set("")
+    nivelUser.set("")
 
 def vetanaRegistro():
     #Ventana Registro
