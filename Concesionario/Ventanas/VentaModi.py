@@ -183,6 +183,7 @@ def cambiardetalle():
     Camioneta = obtenerCamioneta(num)
     Camioneta.detalles = detalleVar.get()
 #Bici
+
 def DetallesBici():
     detalleauto=Toplevel()
     detalleauto.title("Detalles Bici")
@@ -206,7 +207,6 @@ def DetallesBici():
 
     botonBuscar=ttk.Button(detalleauto,text="Actuazliar detalle",command=cambiardetalle)
     botonBuscar.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
-
 def cambiardetalle():
     num=int(numVar.get())
     Bici = obtenerBici(num)
@@ -236,7 +236,6 @@ def DetallesAcoplado():
 
     botonActualizar=ttk.Button(detalleauto,text="Actuazliar detalle",command=cambiardetalle)
     botonActualizar.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
-
 def cambiardetalle():
     num=int(numVar.get())
     auto = obtenerCole(num)
