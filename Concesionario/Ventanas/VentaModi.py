@@ -420,7 +420,7 @@ def PrecioCamioneta():
     detalleVar=StringVar()
     numVar=StringVar()
 
-    selectCamion=Label (detalleauto,text="seleccionar posicion del Camioneta: ")
+    selectCamion=Label (detalleauto,text="seleccionar posicion de la Camioneta: ")
     selectCamion.grid(column=1,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 
     IndexCamion=(Entry(detalleauto,textvariable=numVar))
@@ -448,7 +448,7 @@ def KmCamioneta():
     kmVar=StringVar()
     numVar=StringVar()
 
-    selectColectivo=Label (detalleauto,text="seleccionar posicion del camioneta: ")
+    selectColectivo=Label (detalleauto,text="seleccionar posicion de la Camioneta: ")
     selectColectivo.grid(column=1,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 
     IndexColectivo=(Entry(detalleauto,textvariable=numVar))
@@ -474,7 +474,7 @@ def DetallesCamioneta():
     detalleVar=StringVar()
     numVar=StringVar()
 
-    selectCamioneta=Label (detalleauto,text="seleccionar posicion del Camioneta: ")
+    selectCamioneta=Label (detalleauto,text="seleccionar posicion de la Camioneta: ")
     selectCamioneta.grid(column=1,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 
     IndexCamioneta=(Entry(detalleauto,textvariable=numVar))
