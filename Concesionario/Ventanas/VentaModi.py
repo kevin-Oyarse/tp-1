@@ -1,5 +1,4 @@
-from Concesionario.data.Auto import obtenerAcoplado
-from data.Auto import obtenerBici, obtenerCamion, obtenerCamioneta, obtenerCole, obtenerMoto
+from data.Auto import obtenerBici, obtenerCamion, obtenerCamioneta, obtenerCole, obtenerMoto,obtenerAcoplado
 from model.Auto import *
 from tkinter import ttk as ttk 
 from tkinter import *
@@ -41,7 +40,37 @@ def cambiarPrecio():
     num=int(numVar.get())
     auto = obtenerAuto(num)
     auto.precio = precioVar.get()
-    
+def KmAuto():
+    precioauto=Toplevel()
+    precioauto.title("Precio auto")
+    precioauto.config(width=400,height=320)
+    #String Var
+
+    global kmVar
+    global numVar
+
+    kmVar=StringVar()
+    numVar=StringVar()
+
+    #Entrada de datos
+    selectAuto=Label (precioauto,text="seleccionar posicion del auto: ")
+    selectAuto.grid(column=1,row=2,ipadx=5,ipady=5,padx=10,pady=10)
+
+    IndexAuto=(Entry(precioauto,textvariable=numVar))
+    IndexAuto.grid(column=2,row=2,ipadx=5,ipady=5,padx=10,pady=10)
+
+    detalleLabel=Label (precioauto,text="Ingrese km nuevo: ")
+    detalleLabel.grid(column=1,row=3,ipadx=5,ipady=5,padx=10,pady=10)
+
+    detalleEntry=(Entry(precioauto,textvariable=kmVar))
+    detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
+
+    #Botones
+    botonCargar=ttk.Button (precioauto,text="Cambiar km",command=cambiarKM)
+    botonCargar.grid(column=1,row=14)
+    botonVolver=ttk.Button(precioauto,text="cerrar ventana",command=precioauto.destroy)
+    botonVolver.grid(column=3,row=14)
+
 def DetallesAuto():
     detalleauto=Toplevel()
     detalleauto.title("Detalles auto")
@@ -73,11 +102,45 @@ def cambiardetalle():
     num=int(numVar.get())
     auto = obtenerAuto(num)
     auto.detalles = detalleVar.get()
+def cambiarKM():
+    num=int(numVar.get())
+    auto = obtenerAuto(num)
+    auto.km = kmVar.get()
 
 #Moto
+def KmMoto():
+    precioMoto=Toplevel()
+    precioMoto.title("Km Motos")
+    precioMoto.config(width=400,height=320)
+    #String Var
+
+    global kmVar
+    global numVar
+
+    kmVar=StringVar()
+    numVar=StringVar()
+
+    #Entrada de datos
+    selectMoto=Label (precioMoto,text="seleccionar posicion de la moto: ")
+    selectMoto.grid(column=1,row=2,ipadx=5,ipady=5,padx=10,pady=10)
+
+    IndexMoto=(Entry(precioMoto,textvariable=numVar))
+    IndexMoto.grid(column=2,row=2,ipadx=5,ipady=5,padx=10,pady=10)
+
+    detalleLabel=Label (precioMoto,text="Ingrese km nuevo: ")
+    detalleLabel.grid(column=1,row=3,ipadx=5,ipady=5,padx=10,pady=10)
+
+    detalleEntry=(Entry(precioMoto,textvariable=kmVar))
+    detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
+
+    #Botones
+    botonCargar=ttk.Button (precioMoto,text="Cambiar km",command=cambiarKM)
+    botonCargar.grid(column=1,row=14)
+    botonVolver=ttk.Button(precioMoto,text="cerrar ventana",command=precioMoto.destroy)
+    botonVolver.grid(column=3,row=14)
 def PrecioMoto():
     preciomoto=Toplevel()
-    preciomoto.title("Precio auto")
+    preciomoto.title("Precio Moto")
     preciomoto.config(width=400,height=320)
     #String Var
 
@@ -88,11 +151,11 @@ def PrecioMoto():
     numVar=StringVar()
 
     #Entrada de datos
-    selectAuto=Label (preciomoto,text="seleccionar posicion del auto: ")
-    selectAuto.grid(column=1,row=2,ipadx=5,ipady=5,padx=10,pady=10)
+    selectMoto=Label (preciomoto,text="seleccionar posicion del Moto: ")
+    selectMoto.grid(column=1,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 
-    IndexAuto=(Entry(preciomoto,textvariable=numVar))
-    IndexAuto.grid(column=2,row=2,ipadx=5,ipady=5,padx=10,pady=10)
+    IndexMoto=(Entry(preciomoto,textvariable=numVar))
+    IndexMoto.grid(column=2,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 
     detalleLabel=Label (preciomoto,text="Ingrese Precio nuevo: ")
     detalleLabel.grid(column=1,row=3,ipadx=5,ipady=5,padx=10,pady=10)
@@ -128,12 +191,16 @@ def DetallesMoto():
     detalleEntry=(Entry(detalleauto,textvariable=detalleVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actuazliar detalle",command=cambiardetalle)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar detalle",command=cambiardetalle)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
     botonVolver.grid(column=3,row=14)
 
+def cambiarKM():
+    num=int(numVar.get())
+    auto = obtenerMoto(num)
+    auto.km = kmVar.get()
 def cambiardetalle():
     num=int(numVar.get())
     moto = obtenerMoto(num)
@@ -142,7 +209,36 @@ def cambiarPrecio():
     num=int(numVar.get())
     moto = obtenerMoto(num)
     moto.precio = precioVar.get()
+
 #Colectivo
+def KmCole():
+    detalleauto=Toplevel()
+    detalleauto.title("km Colectivo")
+    detalleauto.config(width=480,height=320)
+
+    global kmVar
+    global numVar
+
+    kmVar=StringVar()
+    numVar=StringVar()
+
+    selectColectivo=Label (detalleauto,text="seleccionar posicion del Colectivo: ")
+    selectColectivo.grid(column=1,row=2,ipadx=5,ipady=5,padx=10,pady=10)
+
+    IndexColectivo=(Entry(detalleauto,textvariable=numVar))
+    IndexColectivo.grid(column=2,row=2,ipadx=5,ipady=5,padx=10,pady=10)
+
+    detalleLabel=Label (detalleauto,text="Ingrese km: ")
+    detalleLabel.grid(column=1,row=3,ipadx=5,ipady=5,padx=10,pady=10)
+
+    detalleEntry=(Entry(detalleauto,textvariable=kmVar))
+    detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
+
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar km",command=cambiarPrecio)
+    botonActualizar.grid(column=1,row=14)
+
+    botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
+    botonVolver.grid(column=3,row=14)
 def PrecioCole():
     detalleauto=Toplevel()
     detalleauto.title("Precios Colectivo")
@@ -160,13 +256,13 @@ def PrecioCole():
     IndexColectivo=(Entry(detalleauto,textvariable=numVar))
     IndexColectivo.grid(column=2,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 
-    detalleLabel=Label (detalleauto,text="Ingrese precio: ")
+    detalleLabel=Label (detalleauto,text="Ingrese precio nuevo: ")
     detalleLabel.grid(column=1,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
     detalleEntry=(Entry(detalleauto,textvariable=precioVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actuazliar precio",command=cambiarPrecio)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar precio",command=cambiarPrecio)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
@@ -188,13 +284,13 @@ def DetallesCole():
     IndexColectivo=(Entry(detalleauto,textvariable=numVar))
     IndexColectivo.grid(column=2,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 
-    detalleLabel=Label (detalleauto,text="Ingrese detalle: ")
+    detalleLabel=Label (detalleauto,text="Ingrese detalle nuevo: ")
     detalleLabel.grid(column=1,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
     detalleEntry=(Entry(detalleauto,textvariable=detalleVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actuazliar detalle",command=cambiardetalle)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar detalle",command=cambiardetalle)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
@@ -208,11 +304,43 @@ def cambiarPrecio():
     num=int(numVar.get())
     Cole = obtenerCole(num)
     Cole.precio = precioVar.get()
+def cambiarKM():
+    num=int(numVar.get())
+    auto = obtenerCole(num)
+    auto.km = kmVar.get()
 
 #Camion
+def KmCamion():
+    detalleauto=Toplevel()
+    detalleauto.title("km Camion")
+    detalleauto.config(width=480,height=320)
+
+    global kmVar
+    global numVar
+
+    kmVar=StringVar()
+    numVar=StringVar()
+
+    selectColectivo=Label (detalleauto,text="seleccionar posicion del Camion: ")
+    selectColectivo.grid(column=1,row=2,ipadx=5,ipady=5,padx=10,pady=10)
+
+    IndexColectivo=(Entry(detalleauto,textvariable=numVar))
+    IndexColectivo.grid(column=2,row=2,ipadx=5,ipady=5,padx=10,pady=10)
+
+    detalleLabel=Label (detalleauto,text="Ingrese km nuevo: ")
+    detalleLabel.grid(column=1,row=3,ipadx=5,ipady=5,padx=10,pady=10)
+
+    detalleEntry=(Entry(detalleauto,textvariable=kmVar))
+    detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
+
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar km",command=cambiarPrecio)
+    botonActualizar.grid(column=1,row=14)
+
+    botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
+    botonVolver.grid(column=3,row=14)
 def PrecioCamion():
     detalleauto=Toplevel()
-    detalleauto.title("Detalles Camion")
+    detalleauto.title("Precios Camion")
     detalleauto.config(width=480,height=320)
 
     global detalleVar
@@ -233,7 +361,7 @@ def PrecioCamion():
     detalleEntry=(Entry(detalleauto,textvariable=precioVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actuazliar precio",command=cambiarPrecio)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar precio",command=cambiarPrecio)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
@@ -255,13 +383,13 @@ def DetallesCamion():
     IndexCamion=(Entry(detalleauto,textvariable=numVar))
     IndexCamion.grid(column=2,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 
-    detalleLabel=Label (detalleauto,text="Ingrese detalle: ")
+    detalleLabel=Label (detalleauto,text="Ingrese detalle nuevo: ")
     detalleLabel.grid(column=1,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
     detalleEntry=(Entry(detalleauto,textvariable=detalleVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actuazliar detalle",command=cambiardetalle)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar detalle",command=cambiardetalle)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
@@ -275,7 +403,68 @@ def cambiarPrecio():
     num=int(numVar.get())
     Cole = obtenerCamion(num)
     Cole.precio = precioVar.get()
+def cambiarKM():
+    num=int(numVar.get())
+    auto = obtenerCamion(num)
+    auto.km = kmVar.get()
+
 #Camioneta
+def PrecioCamioneta():
+    detalleauto=Toplevel()
+    detalleauto.title("Precio Camioneta")
+    detalleauto.config(width=480,height=320)
+
+    global detalleVar
+    global numVar
+
+    detalleVar=StringVar()
+    numVar=StringVar()
+
+    selectCamion=Label (detalleauto,text="seleccionar posicion del Camioneta: ")
+    selectCamion.grid(column=1,row=2,ipadx=5,ipady=5,padx=10,pady=10)
+
+    IndexCamion=(Entry(detalleauto,textvariable=numVar))
+    IndexCamion.grid(column=2,row=2,ipadx=5,ipady=5,padx=10,pady=10)
+
+    detalleLabel=Label (detalleauto,text="Ingrese precio nuevo: ")
+    detalleLabel.grid(column=1,row=3,ipadx=5,ipady=5,padx=10,pady=10)
+
+    detalleEntry=(Entry(detalleauto,textvariable=precioVar))
+    detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
+
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar precio",command=cambiarPrecio)
+    botonActualizar.grid(column=1,row=14)
+
+    botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
+    botonVolver.grid(column=3,row=14)
+def KmCamioneta():
+    detalleauto=Toplevel()
+    detalleauto.title("km Camioneta")
+    detalleauto.config(width=480,height=320)
+
+    global kmVar
+    global numVar
+
+    kmVar=StringVar()
+    numVar=StringVar()
+
+    selectColectivo=Label (detalleauto,text="seleccionar posicion del camioneta: ")
+    selectColectivo.grid(column=1,row=2,ipadx=5,ipady=5,padx=10,pady=10)
+
+    IndexColectivo=(Entry(detalleauto,textvariable=numVar))
+    IndexColectivo.grid(column=2,row=2,ipadx=5,ipady=5,padx=10,pady=10)
+
+    detalleLabel=Label (detalleauto,text="Ingrese km nuevos: ")
+    detalleLabel.grid(column=1,row=3,ipadx=5,ipady=5,padx=10,pady=10)
+
+    detalleEntry=(Entry(detalleauto,textvariable=kmVar))
+    detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
+
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar km",command=cambiarKM)
+    botonActualizar.grid(column=1,row=14)
+
+    botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
+    botonVolver.grid(column=3,row=14)
 def DetallesCamioneta():
     detalleauto=Toplevel()
     detalleauto.title("Detalles Camioneta")
@@ -291,44 +480,54 @@ def DetallesCamioneta():
     IndexCamioneta=(Entry(detalleauto,textvariable=numVar))
     IndexCamioneta.grid(column=2,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 
-    detalleLabel=Label (detalleauto,text="Ingrese detalle: ")
+    detalleLabel=Label (detalleauto,text="Ingrese detalle nuevo: ")
     detalleLabel.grid(column=1,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
     detalleEntry=(Entry(detalleauto,textvariable=detalleVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actuazliar detalle",command=cambiardetalle)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar detalle",command=cambiardetalle)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
     botonVolver.grid(column=3,row=14)
+
+def cambiarPrecio():
+    num=int(numVar.get())
+    auto = obtenerCamioneta(num)
+    auto.precio = precioVar.get()
+def cambiarKM():
+    num=int(numVar.get())
+    auto = obtenerCamioneta(num)
+    auto.km = kmVar.get()
 def cambiardetalle():
     num=int(numVar.get())
     Camioneta = obtenerCamioneta(num)
     Camioneta.detalles = detalleVar.get()
+
 #Bici
 def PrecioBici():
     detalleauto=Toplevel()
-    detalleauto.title("Detalles Bici")
+    detalleauto.title("Precios Bici")
     detalleauto.config(width=480,height=320)
     global detalleVar
     global numVar
     detalleVar=StringVar()
     numVar=StringVar()
 
-    selectBici=Label (detalleauto,text="seleccionar posicion del Camion: ")
+    selectBici=Label (detalleauto,text="seleccionar posicion de la bicicleta: ")
     selectBici.grid(column=1,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 
     IndexBici=(Entry(detalleauto,textvariable=numVar))
     IndexBici.grid(column=2,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 
-    detalleLabel=Label (detalleauto,text="Ingrese precio: ")
+    detalleLabel=Label (detalleauto,text="Ingrese precio nuevo: ")
     detalleLabel.grid(column=1,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
     detalleEntry=(Entry(detalleauto,textvariable=precioVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actuazliar precio",command=cambiardetalle)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar precio",command=cambiardetalle)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
@@ -342,19 +541,19 @@ def DetallesBici():
     detalleVar=StringVar()
     numVar=StringVar()
 
-    selectBici=Label (detalleauto,text="seleccionar posicion del Camion: ")
+    selectBici=Label (detalleauto,text="seleccionar posicion de la bicicleta: ")
     selectBici.grid(column=1,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 
     IndexBici=(Entry(detalleauto,textvariable=numVar))
     IndexBici.grid(column=2,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 
-    detalleLabel=Label (detalleauto,text="Ingrese detalle: ")
+    detalleLabel=Label (detalleauto,text="Ingrese detalle nuevo: ")
     detalleLabel.grid(column=1,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
     detalleEntry=(Entry(detalleauto,textvariable=detalleVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actuazliar detalle",command=cambiardetalle)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar detalle",command=cambiardetalle)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
@@ -369,9 +568,37 @@ def cambiarprecio():
     Bici = obtenerBici(num)
     Bici.precio = precioVar.get()
 #Acoplado
+def KmAcoplado():
+    detalleauto=Toplevel()
+    detalleauto.title("km Acoplado")
+    detalleauto.config(width=480,height=320)
+
+    global kmVar
+    global numVar
+
+    kmVar=StringVar()
+    numVar=StringVar()
+
+    selectColectivo=Label (detalleauto,text="seleccionar posicion del Acoplado: ")
+    selectColectivo.grid(column=1,row=2,ipadx=5,ipady=5,padx=10,pady=10)
+
+    IndexColectivo=(Entry(detalleauto,textvariable=numVar))
+    IndexColectivo.grid(column=2,row=2,ipadx=5,ipady=5,padx=10,pady=10)
+
+    detalleLabel=Label (detalleauto,text="Ingrese km nuevos: ")
+    detalleLabel.grid(column=1,row=3,ipadx=5,ipady=5,padx=10,pady=10)
+
+    detalleEntry=(Entry(detalleauto,textvariable=kmVar))
+    detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
+
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar km",command=cambiarPrecio)
+    botonActualizar.grid(column=1,row=14)
+
+    botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
+    botonVolver.grid(column=3,row=14)
 def PrecioAcoplado():
     detalleauto=Toplevel()
-    detalleauto.title("Detalles Acoplado")
+    detalleauto.title("Precios Acoplado")
     detalleauto.config(width=480,height=320)
     global detalleVar
     global numVar
@@ -384,13 +611,13 @@ def PrecioAcoplado():
     IndexAcoplado=(Entry(detalleauto,textvariable=numVar))
     IndexAcoplado.grid(column=2,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 
-    detalleLabel=Label (detalleauto,text="Ingrese precio: ")
+    detalleLabel=Label (detalleauto,text="Ingrese precio nuevo: ")
     detalleLabel.grid(column=1,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
     detalleEntry=(Entry(detalleauto,textvariable=precioVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actuazliar precio",command=cambiarPrecio)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar precio",command=cambiarPrecio)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
@@ -410,13 +637,13 @@ def DetallesAcoplado():
     IndexAcoplado=(Entry(detalleauto,textvariable=numVar))
     IndexAcoplado.grid(column=2,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 
-    detalleLabel=Label (detalleauto,text="Ingrese detalle: ")
+    detalleLabel=Label (detalleauto,text="Ingrese detalle nuevo: ")
     detalleLabel.grid(column=1,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
     detalleEntry=(Entry(detalleauto,textvariable=detalleVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actuazliar detalle",command=cambiardetalle)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar detalle",command=cambiardetalle)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
@@ -430,3 +657,7 @@ def cambiarPrecio():
     num=int(numVar.get())
     auto = obtenerAcoplado(num)
     auto.precio = precioVar.get()
+def cambiarKM():
+    num=int(numVar.get())
+    auto = obtenerAcoplado(num)
+    auto.km = kmVar.get()
