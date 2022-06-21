@@ -41,22 +41,22 @@ def VentanaKm():
     #Titulo
 
     #Botones
-    botonAuto=ttk.Button(ventanamod,text="Auto")
+    botonAuto=ttk.Button(ventanamod,text="Auto",command=KmAuto)
     botonAuto.grid (column=2,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonMoto=ttk.Button(ventanamod,text=("Moto"))
+    botonMoto=ttk.Button(ventanamod,text="Moto",command=KmMoto)
     botonMoto.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonAcoplado=ttk.Button(ventanamod,text="Acoplado")
+    botonAcoplado=ttk.Button(ventanamod,text="Acoplado",command=KmAcoplado)
     botonAcoplado.grid(column=2,row=4,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonColectivo=ttk.Button(ventanamod,text="Colectivo")
+    botonColectivo=ttk.Button(ventanamod,text="Colectivo",command=KmCole)
     botonColectivo.grid(column=3,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonCamioneta=ttk.Button(ventanamod,text="Camioneta")
+    botonCamioneta=ttk.Button(ventanamod,text="Camioneta",command=KmCamioneta)
     botonCamioneta.grid(column=3,row=4,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonCamio=ttk.Button(ventanamod,text="Camion")
+    botonCamio=ttk.Button(ventanamod,text="Camion",command=KmCamion)
     botonCamio.grid(column=4,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 
 
