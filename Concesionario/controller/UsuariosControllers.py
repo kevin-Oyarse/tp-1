@@ -1,12 +1,8 @@
 from Ventanas.MenuPrincipal import VentanaListaDeVehiculos
 from Ventanas.MenuPrincipal import MenuPrincial
 from Ventanas.VentanaEmple import MenuEmpleado
-from data.Auto import printAutos
 from data.Usuarios import _usuariosRegistrados
 from model.Usuario import Usuario
-from niveles.admin import Admin
-from niveles.invitado import Invitado
-from niveles.empleado import Empleado
 user = Usuario('','','','')
 
 
@@ -21,14 +17,13 @@ def buscarUsuario(nombre):
 
 def validarContrasenia(contra):
     if user.contra == str(contra):
-        print ("login exitoso")
         return [True, user.nvl]
 
 
 def menu(args):
-    if(args == "1"):
+    if(args == 1):
         return menuAdmin()
-    elif args == "2":
+    elif args == 2:
         return menuEmpleado()
     else:
         return menuInvitado()
@@ -36,11 +31,9 @@ def menu(args):
 
 def menuAdmin():
     MenuPrincial()
-    #Admin()
     
 def menuEmpleado():
     MenuEmpleado()
-    #Empleado()
 
 
 def menuInvitado():

@@ -73,7 +73,7 @@ def registarUser():
     name=nombreUser.get()
     passwd=contraUser.get()
     email=CorreoUser.get()
-    nivel=nivelUser.get()
+    nivel=int(nivelUser.get())
 
     newUser=Usuario(name,passwd,email,nivel)
     _usuariosRegistrados.append(newUser)

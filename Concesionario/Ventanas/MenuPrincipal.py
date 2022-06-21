@@ -1,4 +1,3 @@
-from struct import pack
 from tkinter import ttk as ttk 
 from tkinter import *
 import tkinter
@@ -38,7 +37,7 @@ def MenuPrincial():
 
     botonUser=ttk.Button(win,text="Menu usuario",command=lambda:[VentanaUsuarios(),win.destroy()])
     botonUser.grid(column=3,row=1,ipadx=5,ipady=5,padx=10,pady=10)
-
+    
     botonDetalles=ttk.Button(win,text="Agregar detalles a vehiculos",command=lambda:[VentanaDetalles(),win.destroy()])
     botonDetalles.grid(column=3,row=2,ipadx=5,ipady=5,padx=10,pady=10)
 

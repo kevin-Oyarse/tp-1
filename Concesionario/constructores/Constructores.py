@@ -4,9 +4,9 @@ from data.Usuarios import agregaUsuarios, printUsuarios
 from data.Auto import*
 
 def crearUsuarios():
-    usuario = Usuario("admin","admin123","admin@gmail.com","1")
+    usuario = Usuario("admin","admin123","admin@gmail.com",1)
     agregaUsuarios(usuario)
-    usuario = Usuario("empleado","empleado123","admin@gmail.com","2")
+    usuario = Usuario("empleado","empleado123","admin@gmail.com",2)
     agregaUsuarios(usuario)
 
 def crearAuto():

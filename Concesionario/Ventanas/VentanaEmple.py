@@ -1,11 +1,5 @@
-from cProfile import label
-from enum import auto
-from msilib.schema import ComboBox
-from optparse import Values
-from platform import win32_edition
 from tkinter import ttk as ttk 
 from tkinter import *
-from turtle import width
 from model.Usuario import *
 from Ventanas.VentaModi import *
 from Ventanas.VentanaCargar import*
@@ -20,10 +14,6 @@ def MenuEmpleado():
 
     #titulo
     #botones
-
-    botonkm=ttk.Button(win,text="Modificar km de los vehiculos",command=lambda:[VentanaKm(),win.destroy()])
-    botonkm.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
-
 
     botonDetalles=ttk.Button(win,text="Agregar detalles a vehiculos",command=lambda:[VentanaDetalles(),win.destroy()])
     botonDetalles.grid(column=3,row=2,ipadx=5,ipady=5,padx=10,pady=10)
