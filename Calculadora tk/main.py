@@ -116,31 +116,4 @@ def calcular():
         limpiar()
         messagebox.showerror("Error","No se puede realizar la operacion deseada")
 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 root.mainloop()
