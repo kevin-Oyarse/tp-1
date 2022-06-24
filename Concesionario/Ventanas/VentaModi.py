@@ -661,3 +661,4 @@ def cambiarKM():
     num=int(numVar.get())
     auto = obtenerAcoplado(num)
     auto.km = kmVar.get()
+

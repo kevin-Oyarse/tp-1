@@ -86,10 +86,7 @@ def VentanaListaDeVehiculos():
     ventanaList.title("Lista Vehiculos")
     ventanaList.config(width=480,height=320)
     #Text
-    for i in _autos:
-        print(i)
-    listAuto=Label(ventanaList,text=i)
-    listAuto.grid(column=1,row=1)
+   
 
 def VentanaPrecio():
     #Ventana
@@ -253,3 +250,4 @@ def User():
     contraUser.set("")
     CorreoUser.set("")
     nivelUser.set("")
+
