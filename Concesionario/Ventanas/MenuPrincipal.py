@@ -85,6 +85,11 @@ def VentanaListaDeVehiculos():
     ventanaList=Toplevel()
     ventanaList.title("Lista Vehiculos")
     ventanaList.config(width=480,height=320)
+    for i in _autos:
+        autos=i
+    Listbox=tk.Listbox(ventanaList,width=90,height=50)
+    Listbox.pack()
+    Listbox.insert(tk.END,autos)
     #Text
    
 

@@ -49,7 +49,7 @@ def inicio():
     RegistarBoton=ttk.Button(mainFrame,text="Registar",command=vetanaRegistro)
     RegistarBoton.grid(column=0,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    InvitadoButon=ttk.Button(mainFrame,text="Invitado",command=menuInvitado)
+    InvitadoButon=ttk.Button(mainFrame,text="Invitado",command=VentanaListaDeVehiculos)
     InvitadoButon.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
     bienvenida()

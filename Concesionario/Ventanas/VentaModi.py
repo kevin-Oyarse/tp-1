@@ -94,11 +94,11 @@ def DetallesAuto():
     detalleEntry=(Entry(detalleauto,textvariable=detalleVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonBuscar=ttk.Button(detalleauto,text="Actuazliar detalle",command=cambiardetalle)
+    botonBuscar=ttk.Button(detalleauto,text="Actuazliar detalle",command=cambiardetalleAuto)
     botonBuscar.grid(column=1,row=14)
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
     botonVolver.grid(column=3,row=14)
-def cambiardetalle():
+def cambiardetalleAuto():
     num=int(numVar.get())
     auto = obtenerAuto(num)
     auto.detalles = detalleVar.get()
@@ -134,7 +134,7 @@ def KmMoto():
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
     #Botones
-    botonCargar=ttk.Button (precioMoto,text="Cambiar km",command=cambiarKM)
+    botonCargar=ttk.Button (precioMoto,text="Cambiar km",command=cambiarKMmoto)
     botonCargar.grid(column=1,row=14)
     botonVolver=ttk.Button(precioMoto,text="cerrar ventana",command=precioMoto.destroy)
     botonVolver.grid(column=3,row=14)
@@ -164,7 +164,7 @@ def PrecioMoto():
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
     #Botones
-    botonCargar=ttk.Button (preciomoto,text="Cambiar precio",command=cambiarPrecio)
+    botonCargar=ttk.Button (preciomoto,text="Cambiar precio",command=cambiarPrecioMoto)
     botonCargar.grid(column=1,row=14)
     botonVolver=ttk.Button(preciomoto,text="cerrar ventana",command=preciomoto.destroy)
     botonVolver.grid(column=3,row=14)
@@ -191,21 +191,21 @@ def DetallesMoto():
     detalleEntry=(Entry(detalleauto,textvariable=detalleVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actualizar detalle",command=cambiardetalle)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar detalle",command=cambiarPrecioMoto)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
     botonVolver.grid(column=3,row=14)
 
-def cambiarKM():
+def cambiarKMmoto():
     num=int(numVar.get())
     auto = obtenerMoto(num)
     auto.km = kmVar.get()
-def cambiardetalle():
+def cambiarPrecioMoto():
     num=int(numVar.get())
     moto = obtenerMoto(num)
     moto.detalles = detalleVar.get()
-def cambiarPrecio():
+def cambiarPrecioMoto():
     num=int(numVar.get())
     moto = obtenerMoto(num)
     moto.precio = precioVar.get()
@@ -234,7 +234,7 @@ def KmCole():
     detalleEntry=(Entry(detalleauto,textvariable=kmVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actualizar km",command=cambiarPrecio)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar km",command=cambiarKMcole)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
@@ -262,7 +262,7 @@ def PrecioCole():
     detalleEntry=(Entry(detalleauto,textvariable=precioVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actualizar precio",command=cambiarPrecio)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar precio",command=cambiarPrecioCole)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
@@ -290,21 +290,21 @@ def DetallesCole():
     detalleEntry=(Entry(detalleauto,textvariable=detalleVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actualizar detalle",command=cambiardetalle)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar detalle",command=cambiardetalleCole)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
     botonVolver.grid(column=3,row=14)
 
-def cambiardetalle():
+def cambiardetalleCole():
     num=int(numVar.get())
     Cole = obtenerCole(num)
     Cole.detalles = detalleVar.get()
-def cambiarPrecio():
+def cambiarPrecioCole():
     num=int(numVar.get())
     Cole = obtenerCole(num)
     Cole.precio = precioVar.get()
-def cambiarKM():
+def cambiarKMcole():
     num=int(numVar.get())
     auto = obtenerCole(num)
     auto.km = kmVar.get()
@@ -333,7 +333,7 @@ def KmCamion():
     detalleEntry=(Entry(detalleauto,textvariable=kmVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actualizar km",command=cambiarPrecio)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar km",command=cambiarKMCamion)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
@@ -361,7 +361,7 @@ def PrecioCamion():
     detalleEntry=(Entry(detalleauto,textvariable=precioVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actualizar precio",command=cambiarPrecio)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar precio",command=cambiarPrecioCamion)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
@@ -389,21 +389,21 @@ def DetallesCamion():
     detalleEntry=(Entry(detalleauto,textvariable=detalleVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actualizar detalle",command=cambiardetalle)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar detalle",command=cambiardetalleCamion)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
     botonVolver.grid(column=3,row=14)
 
-def cambiardetalle():
+def cambiardetalleCamion():
     num=int(numVar.get())
     Camion = obtenerCamion(num)
     Camion.detalles = detalleVar.get()
-def cambiarPrecio():
+def cambiarPrecioCamion():
     num=int(numVar.get())
     Cole = obtenerCamion(num)
     Cole.precio = precioVar.get()
-def cambiarKM():
+def cambiarKMCamion():
     num=int(numVar.get())
     auto = obtenerCamion(num)
     auto.km = kmVar.get()
@@ -432,7 +432,7 @@ def PrecioCamioneta():
     detalleEntry=(Entry(detalleauto,textvariable=precioVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actualizar precio",command=cambiarPrecio)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar precio",command=cambiarPrecioCaoneta)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
@@ -460,7 +460,7 @@ def KmCamioneta():
     detalleEntry=(Entry(detalleauto,textvariable=kmVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actualizar km",command=cambiarKM)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar km",command=cambiarKMCamioneta)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
@@ -486,21 +486,21 @@ def DetallesCamioneta():
     detalleEntry=(Entry(detalleauto,textvariable=detalleVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actualizar detalle",command=cambiardetalle)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar detalle",command=cambiarPrecioCaoneta)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
     botonVolver.grid(column=3,row=14)
 
-def cambiarPrecio():
+def cambiarPrecioCaoneta():
     num=int(numVar.get())
     auto = obtenerCamioneta(num)
     auto.precio = precioVar.get()
-def cambiarKM():
+def cambiarKMCamioneta():
     num=int(numVar.get())
     auto = obtenerCamioneta(num)
     auto.km = kmVar.get()
-def cambiardetalle():
+def cambiardetalleCamioneta():
     num=int(numVar.get())
     Camioneta = obtenerCamioneta(num)
     Camioneta.detalles = detalleVar.get()
@@ -527,7 +527,7 @@ def PrecioBici():
     detalleEntry=(Entry(detalleauto,textvariable=precioVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actualizar precio",command=cambiardetalle)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar precio",command=cambiarprecioBici)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
@@ -553,17 +553,17 @@ def DetallesBici():
     detalleEntry=(Entry(detalleauto,textvariable=detalleVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actualizar detalle",command=cambiardetalle)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar detalle",command=cambiardetalleBici)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
     botonVolver.grid(column=3,row=14)
 
-def cambiardetalle():
+def cambiardetalleBici():
     num=int(numVar.get())
     Bici = obtenerBici(num)
     Bici.detalles = detalleVar.get()
-def cambiarprecio():
+def cambiarprecioBici():
     num=int(numVar.get())
     Bici = obtenerBici(num)
     Bici.precio = precioVar.get()
@@ -591,7 +591,7 @@ def KmAcoplado():
     detalleEntry=(Entry(detalleauto,textvariable=kmVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actualizar km",command=cambiarPrecio)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar km",command=cambiarKMAco)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
@@ -617,7 +617,7 @@ def PrecioAcoplado():
     detalleEntry=(Entry(detalleauto,textvariable=precioVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actualizar precio",command=cambiarPrecio)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar precio",command=cambiarPrecioAco)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
@@ -643,21 +643,21 @@ def DetallesAcoplado():
     detalleEntry=(Entry(detalleauto,textvariable=detalleVar))
     detalleEntry.grid(column=2,row=3,ipadx=5,ipady=5,padx=10,pady=10)
 
-    botonActualizar=ttk.Button(detalleauto,text="Actualizar detalle",command=cambiardetalle)
+    botonActualizar=ttk.Button(detalleauto,text="Actualizar detalle",command=cambiardetalleAco)
     botonActualizar.grid(column=1,row=14)
 
     botonVolver=ttk.Button(detalleauto,text="cerrar ventana",command=detalleauto.destroy)
     botonVolver.grid(column=3,row=14)
 
-def cambiardetalle():
+def cambiardetalleAco():
     num=int(numVar.get())
     auto = obtenerCole(num)
     auto.detalles = detalleVar.get()
-def cambiarPrecio():
+def cambiarPrecioAco():
     num=int(numVar.get())
     auto = obtenerAcoplado(num)
     auto.precio = precioVar.get()
-def cambiarKM():
+def cambiarKMAco():
     num=int(numVar.get())
     auto = obtenerAcoplado(num)
     auto.km = kmVar.get()

@@ -13,8 +13,6 @@ class Auto():
     def __repr__(self):
         return str(self.__dict__)
 
-    def __str__(self) -> str:
-        return f'Detalles {self.detalles}'
 
 class Bicleta():
     def __init__(self,marca,modelo,precios,detalles,estado):
@@ -25,6 +23,6 @@ class Bicleta():
         self.estado=estado
     def __repr__(self):
         return str(self.__dict__)
-
+    
     def __str__(self) -> str:
         return f'Detalles {self.detalles}'
