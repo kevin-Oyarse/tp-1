@@ -56,7 +56,7 @@ botonsum.grid(column=4,row=5,ipadx=1,ipady=1,padx=1,pady=1)
 botonresta=ttk.Button(mainFrame,text="-",command= lambda: get_operation("-"))
 botonresta.grid(column=4,row=4,ipadx=1,ipady=1,padx=1,pady=1) 
 
-botonmultiplicar=ttk.Button(mainFrame,text="x",command= lambda: get_operation("x"))
+botonmultiplicar=ttk.Button(mainFrame,text="x",command= lambda: get_operation("*"))
 botonmultiplicar.grid(column=4,row=3,ipadx=1,ipady=1,padx=1,pady=1) 
 
 botonmigual=ttk.Button(mainFrame,text="=",command=lambda:calcular())
@@ -68,7 +68,7 @@ botonAc.grid(column=1,row=2,ipadx=1,ipady=1,padx=1,pady=1)
 botonBorrar=ttk.Button(mainFrame,text="<-",command=lambda:borrar())
 botonBorrar.grid(column=2,row=2,ipadx=1,ipady=1,padx=1,pady=1) 
 
-botonPorce=ttk.Button(mainFrame,text="%",command= lambda: get_operation("%"))
+botonPorce=ttk.Button(mainFrame,text="x²",command= lambda: get_operation("**2"))
 botonPorce.grid(column=3,row=2,ipadx=1,ipady=1,padx=1,pady=1) 
 
 botonParen1=ttk.Button(mainFrame,text="(",command= lambda: get_operation("("))

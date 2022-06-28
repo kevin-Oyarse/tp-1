@@ -77,8 +77,10 @@ def registarUser():
 
     newUser=Usuario(name,passwd,email,nivel)
     _usuariosRegistrados.append(newUser)
-
-    messagebox.showinfo("Registro exitoso",f"Se registro el usuaio {name} con exito")
+    if nivel==1:
+        messagebox.showinfo("Registro exitoso",f"Se registro el usuaio {name} como administrador exitosamente")
+    elif nivel ==2:
+        messagebox.showinfo("Registro exitoso",f"Se registro el usuaio {name} como empleado exitosamente")
 
     nombreUser.set("")
     contraUser.set("")

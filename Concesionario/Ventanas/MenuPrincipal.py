@@ -89,9 +89,9 @@ def VentanaListaDeVehiculos():
         autos=i
     Listbox=tk.Listbox(ventanaList,width=90,height=50)
     Listbox.pack()
-    Listbox.insert(tk.END,autos)
+    Listbox.insert(0,autos)
+    
     #Text
-   
 
 def VentanaPrecio():
     #Ventana
